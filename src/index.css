@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif-love: "Cormorant Garamond", "Playfair Display", serif;
+  --font-hand: "Dancing Script", cursive;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #05040d;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Be Vietnam Pro", "Cormorant Garamond", "Inter", system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(230, 191, 122, 0.35);
+  color: #fff;
+}
+
+/* Thin, elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(230, 191, 122, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.font-serif-love {
+  font-family: var(--font-serif-love);
+}
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* ---------------- Starfield & cosmic atmosphere ---------------- */
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes drift-slow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-12px, -18px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes float-y-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes fall-star {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate3d(-160px, 220px, 0) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(-160px, 220px, 0) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    filter: blur(30px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(38px);
+  }
+}
+
+@keyframes shimmer-gold {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes heart-rise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-320px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes soft-zoom-in {
+  0% {
+    transform: scale(1.06);
+    opacity: 0;
+    filter: blur(14px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle linear infinite;
+}
+.animate-drift-slow {
+  animation: drift-slow 12s ease-in-out infinite;
+}
+.animate-float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+.animate-float-y-slow {
+  animation: float-y-slow 9s ease-in-out infinite;
+}
+.animate-fall-star {
+  animation: fall-star linear infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+.animate-shimmer-gold {
+  animation: shimmer-gold 3.2s ease-in-out infinite;
+}
+.animate-heart-rise {
+  animation: heart-rise 2.6s ease-out forwards;
+}
+.animate-soft-zoom-in {
+  animation: soft-zoom-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-ring-spin {
+  animation: ring-spin 1.6s linear infinite;
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 18px rgba(230, 191, 122, 0.45), 0 0 40px rgba(120, 90, 200, 0.25);
+}
+
+.glass-panel {
+  background: rgba(15, 14, 30, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(230, 191, 122, 0.22);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 191, 122, 0.35);
+  transition: all 0.35s ease;
+}
+.glass-button:hover {
+  background: rgba(230, 191, 122, 0.14);
+  border-color: rgba(230, 191, 122, 0.6);
+  box-shadow: 0 0 24px rgba(230, 191, 122, 0.25);
+}
+
+.letter-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 15px;
+  }
+}
